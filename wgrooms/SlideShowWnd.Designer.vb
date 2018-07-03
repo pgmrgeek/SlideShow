@@ -22,7 +22,16 @@ Partial Class SlideShowWnd
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.lblFullWindow = New System.Windows.Forms.Label()
         Me.SuspendLayout()
+        '
+        'lblFullWindow
+        '
+        Me.lblFullWindow.BackColor = System.Drawing.Color.Transparent
+        Me.lblFullWindow.Location = New System.Drawing.Point(12, 9)
+        Me.lblFullWindow.Name = "lblFullWindow"
+        Me.lblFullWindow.Size = New System.Drawing.Size(682, 459)
+        Me.lblFullWindow.TabIndex = 0
         '
         'SlideShowWnd
         '
@@ -31,6 +40,7 @@ Partial Class SlideShowWnd
         Me.BackColor = System.Drawing.Color.Black
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = Global.SlideShow.My.MySettings.Default.ssWindowSize
+        Me.Controls.Add(Me.lblFullWindow)
         Me.DataBindings.Add(New System.Windows.Forms.Binding("Location", Global.SlideShow.My.MySettings.Default, "sswLocation", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.DataBindings.Add(New System.Windows.Forms.Binding("ClientSize", Global.SlideShow.My.MySettings.Default, "ssWindowSize", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.DoubleBuffered = True
@@ -41,4 +51,5 @@ Partial Class SlideShowWnd
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents lblFullWindow As System.Windows.Forms.Label
 End Class

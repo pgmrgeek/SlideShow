@@ -184,7 +184,7 @@ Partial Class Form1
         '
         'btnMaximize
         '
-        Me.btnMaximize.Location = New System.Drawing.Point(108, 228)
+        Me.btnMaximize.Location = New System.Drawing.Point(120, 228)
         Me.btnMaximize.Name = "btnMaximize"
         Me.btnMaximize.Size = New System.Drawing.Size(87, 23)
         Me.btnMaximize.TabIndex = 34
@@ -193,7 +193,7 @@ Partial Class Form1
         '
         'btnResetPos
         '
-        Me.btnResetPos.Location = New System.Drawing.Point(18, 228)
+        Me.btnResetPos.Location = New System.Drawing.Point(213, 228)
         Me.btnResetPos.Name = "btnResetPos"
         Me.btnResetPos.Size = New System.Drawing.Size(84, 23)
         Me.btnResetPos.TabIndex = 33
@@ -212,11 +212,12 @@ Partial Class Form1
         '
         'ssBoarders
         '
-        Me.ssBoarders.Location = New System.Drawing.Point(201, 228)
+        Me.ssBoarders.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ssBoarders.Location = New System.Drawing.Point(18, 228)
         Me.ssBoarders.Name = "ssBoarders"
         Me.ssBoarders.Size = New System.Drawing.Size(96, 23)
         Me.ssBoarders.TabIndex = 21
-        Me.ssBoarders.Text = "Disable Boarders"
+        Me.ssBoarders.Text = "Disable Boarder"
         Me.ssBoarders.UseVisualStyleBackColor = True
         '
         'GroupBox3

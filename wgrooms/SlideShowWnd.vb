@@ -34,4 +34,18 @@ Public Class SlideShowWnd
     Private Sub PictureBox1_Click(sender As System.Object, e As System.EventArgs)
 
     End Sub
+
+    Private Sub Label1_Click(sender As System.Object, e As System.EventArgs) Handles lblFullWindow.Click
+        If Me.WindowState = FormWindowState.Maximized Then
+            Me.WindowState = FormWindowState.Normal
+        End If
+    End Sub
+
+    Public Sub ResizeLableBox()
+        Dim p As Point
+        p = lblFullWindow.Size
+        p.Y = Me.Size.Height
+        p.X = Me.Size.Width
+        lblFullWindow.Size = p
+    End Sub
 End Class

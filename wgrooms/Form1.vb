@@ -267,39 +267,45 @@ Public Class Form1
 
     End Sub
 
+    Public Sub WatchFolderChange(ByVal dir As String)
+        globals.WatchFolder.EnableRaisingEvents = False
+        globals.WatchFolder.Path = dir
+        globals.WatchFolder.EnableRaisingEvents = True
+    End Sub
+
     Public Sub WatchThisFolder(ByVal turnon As Boolean)
 
         ' turn on the watcher of the background print processor folder
         If turnon Then
 
             ' allocate the system resources
-            If Globals.WatchFolderSetup = False Then
-                Globals.WatchFolder = New System.IO.FileSystemWatcher()
+            If globals.WatchFolderSetup = False Then
+                globals.WatchFolder = New System.IO.FileSystemWatcher()
             End If
 
             ' set the path, turn it on..
             globals.WatchFolder.Path = globals.fpath ' "c:\onsite\slides"
-            Globals.WatchFolder.Filter = "*.jp*"
-            Globals.WatchFolder.EnableRaisingEvents = True
+            globals.WatchFolder.Filter = "*.jp*"
+            globals.WatchFolder.EnableRaisingEvents = True
 
             'Add a list of Filter we want to specify
             'make sure you use OR for each Filter as we need to
             'all of those 
 
-            Globals.WatchFolder.NotifyFilter = IO.NotifyFilters.DirectoryName Or _
+            globals.WatchFolder.NotifyFilter = IO.NotifyFilters.DirectoryName Or _
                                        IO.NotifyFilters.FileName Or _
                                        IO.NotifyFilters.Attributes
 
             ' add the handler to each event
-            AddHandler Globals.WatchFolder.Changed, AddressOf logchange
-            AddHandler Globals.WatchFolder.Created, AddressOf logchange
-            AddHandler Globals.WatchFolder.Deleted, AddressOf logchange
+            AddHandler globals.WatchFolder.Changed, AddressOf logchange
+            AddHandler globals.WatchFolder.Created, AddressOf logchange
+            AddHandler globals.WatchFolder.Deleted, AddressOf logchange
 
             ' add the rename handler as the signature is different
-            AddHandler Globals.WatchFolder.Renamed, AddressOf logchange
+            AddHandler globals.WatchFolder.Renamed, AddressOf logchange
         Else
             ' disable the watching
-            Globals.WatchFolder.EnableRaisingEvents = False
+            globals.WatchFolder.EnableRaisingEvents = False
         End If
 
     End Sub
@@ -498,10 +504,10 @@ Public Class Form1
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ssBoarders.Click
         If SlideShowWnd.FormBorderStyle = Windows.Forms.FormBorderStyle.Sizable Then
-            ssBoarders.Text = "Enable Boarders"
+            ssBoarders.Text = "Enable Boarder"
             SlideShowWnd.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         Else
-            ssBoarders.Text = "Disable Boarders"
+            ssBoarders.Text = "Disable Boarder"
             SlideShowWnd.FormBorderStyle = Windows.Forms.FormBorderStyle.Sizable
         End If
 
@@ -636,9 +642,11 @@ Public Class Form1
     Private Sub btnMaximize_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMaximize.Click
         If SlideShowWnd.WindowState = FormWindowState.Maximized Then
             SlideShowWnd.WindowState = FormWindowState.Normal
+
         Else
             SlideShowWnd.WindowState = FormWindowState.Maximized
         End If
+        Call SlideShowWnd.ResizeLableBox()
     End Sub
 
     Private Sub lblSecondsPer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblSecondsPer.Click
@@ -759,7 +767,7 @@ Public Class Form1
             End If
             tbFilePath.Text = str
             lblFileCount.Text = " Click RUN to see .jpg count"
-
+            WatchFolderChange(str)
         End If
 
     End Sub
@@ -769,7 +777,7 @@ End Class
 
 Public Class globals
 
-    Public Shared PgmTitle As String = "SlideShow by Bay Area Event Photography V01.00.00"
+    Public Shared PgmTitle As String = "SlideShow by Bay Area Event Photography V01.01.00"
     Public Shared fForm1 As New Form1
     Public Shared fSlideShow As New SlideShowWnd
     Public Shared trans As Transition

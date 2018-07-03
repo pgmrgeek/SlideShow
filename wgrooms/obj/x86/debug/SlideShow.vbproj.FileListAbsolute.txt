@@ -68,3 +68,14 @@ C:\Code\SlideShow\Slideshow.01.01.00\wgrooms\obj\x86\Debug\SlideShow.vbproj.Gene
 C:\Code\SlideShow\Slideshow.01.01.00\wgrooms\obj\x86\Debug\SlideShow.exe
 C:\Code\SlideShow\Slideshow.01.01.00\wgrooms\obj\x86\Debug\SlideShow.xml
 C:\Code\SlideShow\Slideshow.01.01.00\wgrooms\obj\x86\Debug\SlideShow.pdb
+C:\Users\User\Documents\GitHub\SlideShow\wgrooms\obj\x86\Debug\SlideShow.Form1.resources
+C:\Users\User\Documents\GitHub\SlideShow\wgrooms\obj\x86\Debug\SlideShow.Resources.resources
+C:\Users\User\Documents\GitHub\SlideShow\wgrooms\obj\x86\Debug\SlideShow.SlideShowWnd.resources
+C:\Users\User\Documents\GitHub\SlideShow\wgrooms\obj\x86\Debug\SlideShow.vbproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\SlideShow\wgrooms\obj\x86\Debug\SlideShow.exe
+C:\Users\User\Documents\GitHub\SlideShow\wgrooms\obj\x86\Debug\SlideShow.xml
+C:\Users\User\Documents\GitHub\SlideShow\wgrooms\obj\x86\Debug\SlideShow.pdb
+C:\Users\User\Documents\GitHub\SlideShow\wgrooms\bin\Debug\SlideShow.exe.config
+C:\Users\User\Documents\GitHub\SlideShow\wgrooms\bin\Debug\SlideShow.exe
+C:\Users\User\Documents\GitHub\SlideShow\wgrooms\bin\Debug\SlideShow.pdb
+C:\Users\User\Documents\GitHub\SlideShow\wgrooms\bin\Debug\SlideShow.xml
