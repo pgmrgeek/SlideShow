@@ -45,10 +45,15 @@ Public Class Form1
 
         ' use the saved path or the default path
         If tbFilePath.Text <> "" Then
-            globals.fpath = tbFilePath.Text
+            If IO.Directory.Exists(tbFilePath.Text) Then
+                globals.fpath = tbFilePath.Text
+            Else
+                globals.fpath = My.Application.Info.DirectoryPath + "\"
+            End If
         Else
             globals.fpath = My.Application.Info.DirectoryPath + "\"
         End If
+
         tbFilePath.Text = globals.fpath
         ' make sure it ends with a backslash
         If Microsoft.VisualBasic.Right(tbFilePath.Text, 1) <> "\" Then
@@ -777,7 +782,7 @@ End Class
 
 Public Class globals
 
-    Public Shared PgmTitle As String = "SlideShow by Bay Area Event Photography V01.01.00"
+    Public Shared PgmTitle As String = "SlideShow by Bay Area Event Photography V01.02.00"
     Public Shared fForm1 As New Form1
     Public Shared fSlideShow As New SlideShowWnd
     Public Shared trans As Transition
